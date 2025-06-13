@@ -35,15 +35,15 @@ wget -q --show-progress -O musescore_deps_macos.tar.gz https://raw.githubusercon
 mkdir -p $HOME/musescore_deps_macos
 tar xf musescore_deps_macos.tar.gz -C $HOME/musescore_deps_macos
 rm musescore_deps_macos.tar.gz
-echo "musescore_deps_macos directory:"
-ls $HOME/musescore_deps_macos
-echo "expected libinstpatch-2 parent include directory:"
-ls /Users/runner/work/musescore_deps/musescore_deps/musescore_deps_macos/include/
-echo "expected libinstpatch-2 include directory:"
-ls /Users/runner/work/musescore_deps/musescore_deps/musescore_deps_macos/include/libinstpatch-2
+#echo "musescore_deps_macos directory:"
+#ls $HOME/musescore_deps_macos
+#echo "expected libinstpatch-2 parent include directory:"
+#ls /Users/runner/work/musescore_deps/musescore_deps/musescore_deps_macos/include/
+#echo "expected libinstpatch-2 include directory:"
+#ls /Users/runner/work/musescore_deps/musescore_deps/musescore_deps_macos/include/libinstpatch-2
 echo "find $HOME/musescore_deps_macos"
-find "$HOME/musescore_deps_macos"
-echo "find /Users/runner/work/musescore_deps/musescore_deps/musescore_deps_macos/"
-find "/Users/runner/work/musescore_deps/musescore_deps/musescore_deps_macos/"
+find "$HOME/musescore_deps_macos" || true
+echo "find /Users/runner/work/musescore_deps/musescore_deps/"
+find "/Users/runner/work/musescore_deps/musescore_deps/" || true
 
 echo "Setup script done"
