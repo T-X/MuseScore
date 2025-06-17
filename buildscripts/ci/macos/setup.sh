@@ -31,7 +31,8 @@ brew install cmake ninja --formula --quiet
 # Download dependencies
 echo "Download dependencies"
 
-wget -q --show-progress -O musescore_deps_macos.tar.gz https://raw.githubusercontent.com/T-X/musescore_deps/main/musescore_deps_macos.tar.gz
+#wget -q --show-progress -O musescore_deps_macos.tar.gz https://raw.githubusercontent.com/T-X/musescore_deps/main/musescore_deps_macos.tar.gz
+wget -q --show-progress -O musescore_deps_macos.tar.gz https://raw.githubusercontent.com/T-X/musescore_deps/libinstpatch-dep-arm64-only/musescore_deps_macos.tar.gz
 mkdir -p $HOME/musescore_deps_macos
 tar xf musescore_deps_macos.tar.gz -C $HOME/musescore_deps_macos
 rm musescore_deps_macos.tar.gz
