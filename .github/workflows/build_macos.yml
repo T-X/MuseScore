@@ -184,6 +184,10 @@ jobs:
       with:
         token: ${{ secrets.TRANSIFEX_API_TOKEN }}
         args: "pull -f"
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
+      with:
+        detached: true
     - name: Build
       run: |
         C_URL=${SENTRY_URL}; if [ -z "$C_URL" ]; then C_URL="''"; fi
@@ -208,7 +212,7 @@ jobs:
       if: env.DO_UPLOAD_SYMBOLS == 'true'
       run: |
         APP_BIN=$(pwd)/applebuild/mscore.app/Contents/MacOS/mscore
-        GENERATE_ARCHS=("x86_64 arm64")
+        GENERATE_ARCHS=("arm64")
         BUILD_DIR=$(pwd)/applebuild
         cmake -DAPP_BIN=${APP_BIN} \
               -DGENERATE_ARCHS="${GENERATE_ARCHS}" \
